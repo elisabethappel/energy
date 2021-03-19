@@ -14,24 +14,23 @@ html, body, .fullContainer, .sidebar, .map{
   padding: 10px;
   text-align: center;
   font: 30px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+   overflow-y: scroll;
 }
 
 .map {
   flex-grow:1;
+  overflow:hidden;
 }
 
 
 .score-container {
   position: relative;
-  height: 300px;
+  height:200px;
   top: 0;
-  margin-top: 20px;
-  width: 250px;
+  margin-top: 0px;
+  width: 100%;
 }
 
-#score {
-  font: 80px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-}
 
 
 .legend {
@@ -39,8 +38,24 @@ html, body, .fullContainer, .sidebar, .map{
   padding: 10px;
   height: 150px;
   margin-bottom: 40px;
+  margin-top: 40px;
   text-align: center;
   font: 12px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+.informationContainer {
+  width:100%;
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.mapinfo {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  font: 15px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  height:100px;
 }
 
 .colors {
@@ -62,6 +77,10 @@ html, body, .fullContainer, .sidebar, .map{
 
 #c4 {
   background-color: green;
+}
+
+#mapScore {
+  text-align: center;
 }
 
 .color-container {
