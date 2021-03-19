@@ -84,11 +84,20 @@ map.on('click', function(e) {
   });
 
   if (nycbbls.length > 0) {
-    document.getElementById('score').innerHTML = '<h4 style = "font-size:300%" ><strong>' + nycbbls[0].properties.score + '</strong></h4><p><strong><em>';
+    document.getElementById('score').innerHTML = '<h4 style = "font-size:800%" "text-align:center" ><strong>' + nycbbls[0].properties.score + '</strong></h4><p><strong><em>';
+    document.getElementById('mapAddress').innerHTML = 'address:<h4 style = "font-size:100%" "text-align:left">' + nycbbls[0].properties.disclosure_pluto_address + '</h4><p><strong><em>';
+    document.getElementById('mapScore').innerHTML = 'energy score:<h4 style = "font-size:600%">' + nycbbls[0].properties.disclosure_pluto_es_score + '</h4><p><strong><em>';
+    document.getElementById('mapGHG').innerHTML = 'total ghg (tons):<h4 style = "font-size:100%" "text-align:left">' + nycbbls[0].properties.disclosure_pluto_total_ghg + '</h4><p><strong><em>';
   } else {
     document.getElementById('score').innerHTML = '';
+    document.getElementById('mapAddress').innerHTML = '';
+    document.getElementById('mapGHG').innerHTML = '';
   }
 });
+
+
+
+
 
 map.on('mousemove', function(d) {
   var nycbbls = map.queryRenderedFeatures(d.point, {
