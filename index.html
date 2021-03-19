@@ -15,25 +15,35 @@
 
 <div class='fullContainer'>
   <div class='sidebar'> Building Energy Efficiency Rating
-    <div class= 'score-container' id='score'></div>
-    <div class="legend">
-      <p> <b>Energy Score </b> </p>
-      <div class="color-code">
-      <div class="colors" id="c1"></div>
-      <div class="colors" id="c2"></div>
-      <div class="colors" id="c3"></div>
-      <div class="colors" id="c4"></div>
-      </div>
-      <div class="color-container">
-        <div>D (0 - 55)</div>
-        <div>C (56 - 70)</div>
-        <div>B (71 - 85)</div>
-        <div>A (86 - 100)</div>
-      </div>
-      <p style="text-align:left"> <i>Grades are determined by a building’s ENERGY STAR Portfolio Manager score, which comes from the annual energy benchmarking that is required under Local Law 84 and 33 </i> </p>
-      <button type="button" data-bs-toggle="modal" class="btn btn-link" data-bs-target="#exampleModal"> <i class="fas fa-info"></i></button>
+    <div class= 'score-container' id='score'>
     </div>
+      <div class="legend">
+        <div class= "informationContainer">
+          <div class= "mapinfo" id='mapAddress'></div>
+          <div class= "mapinfo" id='mapScore'></div>
+          <div class= "mapinfo" id='mapGHG'></div>
 
+        </div>
+        <p> <b>Energy Score </b> </p>
+        <div class="color-code">
+        <div class="colors" id="c1"></div>
+        <div class="colors" id="c2"></div>
+        <div class="colors" id="c3"></div>
+        <div class="colors" id="c4"></div>
+        </div>
+        <div class="color-container">
+          <div>D (0 - 55)</div>
+          <div>C (56 - 70)</div>
+          <div>B (71 - 85)</div>
+          <div>A (86 - 100)</div>
+        </div>
+        <p style="text-align:left"> <i>Grades are determined by a building’s ENERGY STAR Portfolio Manager score, which comes from the annual energy benchmarking that is required under Local Law 84 and 33 </i> </p>
+        <button type="button" data-bs-toggle="modal" class="btn btn-link" data-bs-target="#exampleModal"> <i class="fas fa-info"></i></button>
+
+      </div>
+  <!--  <div class='chart'>
+      <img src="img/chart.png" width="100%" height="220" style="vertical-align:bottom">
+    </div>-->
   </div>
   <div class= 'map' id='map'></div>
 
