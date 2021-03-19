@@ -3,8 +3,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZWxpc2FiZXRoYXBwZWwiLCJhIjoiY2tsMTNnYTdmMmxhb
 var map = new mapboxgl.Map({
   container: 'map', // container ID
   style: 'mapbox://styles/mapbox/light-v10', // style URL
-  center: [-73.992313,40.678211], // starting position [lng, lat]
-  zoom: 10 // starting zoom
+  center: [-73.966311,40.746759], // starting position [lng, lat]
+  zoom: 12 // starting zoom
 });
 
 var nav = new mapboxgl.NavigationControl();
@@ -77,8 +77,6 @@ map.on('style.load', function () {
 
  })
 })
-
-
 
 map.on('click', function(e) {
   var nycbbls = map.queryRenderedFeatures(e.point, {
