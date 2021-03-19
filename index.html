@@ -12,43 +12,55 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>Building Energy Use</title>
   </head>
-<!--   <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <span class="navbar-brand mb-0 h1">About</span>
-    </div>
-  </nav> -->
+
 <div class='fullContainer'>
-
-
-        <div class='sidebar'> Building Energy Efficiency Rating
-          <div class= 'score-container' id='score'></div>
-          <div class="legend">
-            <p> <b>Energy Score </b> </p>
-            <div class="color-code">
-            <div class="colors" id="c1"></div>
-            <div class="colors" id="c2"></div>
-            <div class="colors" id="c3"></div>
-            <div class="colors" id="c4"></div>
-          </div>
-          <div class="color-container">
-            <div>D (0 - 55)</div> 
-            <div>C (56 - 70)</div>
-            <div>B (71 - 85)</div>
-            <div>A (86 - 100)</div>
-          </div>
-
-          <p style="text-align:left"> <i>Grades are determined by a building’s ENERGY STAR Portfolio Manager score, which comes from the annual energy benchmarking that is required under Local Law 84 and 133 </i> </p>
-        </div>
-
+  <div class='sidebar'> Building Energy Efficiency Rating
+    <div class= 'score-container' id='score'></div>
+    <div class="legend">
+      <p> <b>Energy Score </b> </p>
+      <div class="color-code">
+      <div class="colors" id="c1"></div>
+      <div class="colors" id="c2"></div>
+      <div class="colors" id="c3"></div>
+      <div class="colors" id="c4"></div>
       </div>
-        <div class= 'map' id='map'></div>
-
+      <div class="color-container">
+        <div>D (0 - 55)</div>
+        <div>C (56 - 70)</div>
+        <div>B (71 - 85)</div>
+        <div>A (86 - 100)</div>
+      </div>
+      <p style="text-align:left"> <i>Grades are determined by a building’s ENERGY STAR Portfolio Manager score, which comes from the annual energy benchmarking that is required under Local Law 84 and 33 </i> </p>
+      <button type="button" data-bs-toggle="modal" class="btn btn-link" data-bs-target="#exampleModal"> <i class="fas fa-info"></i></button>
     </div>
+
+  </div>
+  <div class= 'map' id='map'></div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">About</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p> Local Law 33 is already an active New York City ordinance that requires buildings above 25,000 square feet to post an energy efficiency grade at each public entrance beginning in 2020. Similar to the Department of Health grades for restaurants, a building’s energy efficiency grade will be a letter. </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
     <!-- Optional JavaScript; choose one of the two! -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
+    <script src="https://kit.fontawesome.com/9fb8c9b9bc.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
