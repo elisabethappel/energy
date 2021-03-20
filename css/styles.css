@@ -43,6 +43,7 @@ html, body, .fullContainer, .sidebar, .map{
   font: 12px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 .informationContainer {
+  margin-top: 20px;
   width:100%;
   display: grid;
   grid-column-start: 1;
