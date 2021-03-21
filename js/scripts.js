@@ -13,27 +13,6 @@ map.addControl(nav, 'top-left');
 
 
 map.on('style.load', function () {
-  // adding geojson source data, downloaded from external site
-  // we need to load the data manually because our population properties are strings and not numbers!!!
-
-  //load legend on map load
-//  var layers = ['0-55', '55-70', '70-85', '85-100'];
-//  var colors = ['red', 'orange', 'yellow', 'green'];
-
-//  for (i = 0; i < layers.length; i++) {
-//    var layer = layers[i];
-//    var color = colors[i];
-//    var item = document.createElement('div');
-//    var key = document.createElement('span');
-//    key.className = 'legend-key';
-//    key.style.backgroundColor = color;
-
-//    var value = document.createElement('span');
-//    value.innerHTML = layer;
-//    item.appendChild(key);
-//    item.appendChild(value);
-//    legend.appendChild(item);
-//}
 
  $.getJSON('data/ll84_energy_map.geojson', function(featureCollection) {
 
@@ -74,6 +53,26 @@ map.on('style.load', function () {
      }
    })
 
+   map.addSource('highlight-feature', {
+      type: 'geojson',
+      data: {
+        type: 'FeatureCollection',
+        features: []
+      }
+    })
+
+    map.addLayer({
+      id: 'highlight-line',
+      type: 'line',
+      source: 'highlight-feature',
+      paint: {
+        'line-width': 2,
+        'line-opacity': 1,
+        'line-color': 'black',
+      }
+    });
+
+
 
  })
 })
@@ -84,15 +83,25 @@ map.on('click', function(e) {
   });
 
   if (nycbbls.length > 0) {
+    var hoveredFeature = nycbbls[0]
+
     document.getElementById('score').innerHTML = '<h4 style = "font-size:800%" "text-align:center" ><strong>' + nycbbls[0].properties.score + '</strong></h4><p><strong><em>';
     document.getElementById('mapAddress').innerHTML = 'address:<h4 style = "font-size:100%" "text-align:left">' + nycbbls[0].properties.disclosure_pluto_address + '</h4><p><strong><em>';
     document.getElementById('mapScore').innerHTML = 'energy score:<h4 style = "font-size:600%">' + nycbbls[0].properties.disclosure_pluto_es_score + '</h4><p><strong><em>';
     document.getElementById('mapGHG').innerHTML = 'year built:<h4 style = "font-size:100%" "text-align:left">' + nycbbls[0].properties.YearBuilt+ '</h4><p><strong><em>';
+    // set this feature as the data for the highlight source
+    map.getSource('highlight-feature').setData(hoveredFeature.geometry);
+
   } else {
     document.getElementById('score').innerHTML = '';
     document.getElementById('mapAddress').innerHTML = '';
     document.getElementById('mapScore').innerHTML = '';
     document.getElementById('mapGHG').innerHTML = '';
+    // reset the highlight source to an empty featurecollection
+      map.getSource('highlight-feature').setData({
+        type: 'FeatureCollection',
+        features: []
+      });
   }
 });
 
