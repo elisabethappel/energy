@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <body>
@@ -38,7 +37,7 @@
           <div>A (86 - 100)</div>
         </div>
         <p style="text-align:left"> <i>Grades are determined by a building’s ENERGY STAR Portfolio Manager score, which comes from the annual energy benchmarking that is required under Local Law 84 and 33 </i> </p>
-        <button type="button" data-bs-toggle="modal" class="btn btn-link" data-bs-target="#exampleModal"> <i class="fas fa-info"></i></button>
+        <button type="button" data-bs-toggle="modal" class="btn btn-link" data-bs-target="#modal"> <i class="fas fa-info"></i></button>
 
       </div>
   <!--  <div class='chart'>
@@ -47,15 +46,34 @@
   </div>
   <div class= 'map' id='map'></div>
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">About</h5>
+          <h5 class="modal-title">About this map</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p> Local Law 33 is already an active New York City ordinance that requires buildings above 25,000 square feet to post an energy efficiency grade at each public entrance beginning in 2020. Similar to the Department of Health grades for restaurants, a building’s energy efficiency grade will be a letter. </p>
+            <div class="container-fluid">
+              <p> Local Law 33 is already an active New York City ordinance that requires buildings above 25,000 square feet to post an energy efficiency grade at each public entrance beginning in 2020. Similar to the Department of Health grades for restaurants, a building’s energy efficiency grade will be a letter. </p>
+                  <div class="row">
+                    <div class="col-8 col-md-6">
+                      <img src = "/img/ex-score.jpg" width="75%" style="vertical-align:middle;margin:30px 50px">
+                    </div>
+                    <div class="col-4 col-md-6">
+                    <p>  Local Law 33 is already an active New York City ordinance that requires buildings above 25,000 square feet to post an energy efficiency grade at each public entrance beginning in 2020. Similar to the Department of Health grades for restaurants, a building’s energy efficiency grade will be a letter. </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8 col-md-6">
+                      <img src = "/img/finalplot.png" width = "100%">
+                    </div>
+                    <div class="col-4 col-md-6">
+                    <p>  Local Law 33 is already an active New York City ordinance that requires buildings above 25,000 square feet to post an energy efficiency grade at each public entrance beginning in 2020. Similar to the Department of Health grades for restaurants, a building’s energy efficiency grade will be a letter.</p>
+                    </div>
+                  </div>
+              </div>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

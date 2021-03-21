@@ -92,3 +92,7 @@ html, body, .fullContainer, .sidebar, .map{
   margin-bottom: 15px;
   font-weight:bold;
 }
+
+.row {
+  margin:30px 0px
+}

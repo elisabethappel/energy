@@ -116,3 +116,7 @@ accessToken: mapboxgl.accessToken,
 mapboxgl: mapboxgl
 })
 );
+
+$(window).on('load', function() {
+       $('#modal').modal('show');
+   });
