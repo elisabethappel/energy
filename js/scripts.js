@@ -91,6 +91,7 @@ map.on('click', function(e) {
   } else {
     document.getElementById('score').innerHTML = '';
     document.getElementById('mapAddress').innerHTML = '';
+    document.getElementById('mapScore').innerHTML = '';
     document.getElementById('mapGHG').innerHTML = '';
   }
 });
