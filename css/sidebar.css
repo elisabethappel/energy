@@ -1,0 +1,70 @@
+.score-container {
+  position: relative;
+  height: 200px;
+  top: 0;
+  margin-top: 0px;
+  width: 100%;
+}
+
+/* styling information in upper sidebar, displaying map information*/
+.legend {
+  position: relative;
+  padding: 10px;
+  height: 150px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.informationContainer {
+  margin-top: 20px;
+  width: 100%;
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.mapinfo {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  font: 15px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  height: 100px;
+}
+
+/* styling static energy information, colours*/
+.energyContainer, .color-container, .colors {
+  font: 12px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-top: 4px;
+  margin-bottom: 15px;
+}
+
+.colors {
+  width: 25%;
+  height: 30px;
+}
+
+.color-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+#c1 {
+  background-color: red;
+}
+
+#c2 {
+  background-color: orange;
+}
+
+#c3 {
+  background-color: yellow;
+}
+
+#c4 {
+  background-color: green;
+}

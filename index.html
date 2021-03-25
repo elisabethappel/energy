@@ -11,37 +11,43 @@
   <!-- Mapbox CSS -->
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/sidebar.css">
   <title>Building Energy Use</title>
   </head>
 
   <div class='fullContainer'>
-    <div class='sidebar'> <b>Building Energy Efficiency Rating </b>
-      <div class='score-container' id='score'>
-        <p style="text-align:left; margin:30px 30px; font-size:20px"> Select a building on the map to explore its energy performance </p>
+    <div class='sidebar'>
+      <div class='letter'>
+        <b>Building Energy Efficiency Rating </b>
+        <div class='score-container' id='score'>
+          <p style="text-align:center; margin:30px 30px; font-size:16px"> <i>Click on a property to explore its energy performance</i> </p>
+        </div>
+        <div class="legend">
+          <div class="informationContainer">
+            <div class="mapinfo" id='mapAddress'></div>
+            <div class="mapinfo" id='mapScore'></div>
+            <div class="mapinfo" id='mapYear'></div>
+          </div>
+        </div>
+        <div class="energyContainer">
+          <p> <b>Energy Score </b> </p>
+          <div class="color-code">
+            <div class="colors" id="c1"></div>
+            <div class="colors" id="c2"></div>
+            <div class="colors" id="c3"></div>
+            <div class="colors" id="c4"></div>
+          </div>
+          <div class="color-container">
+            <div>D (0 - 55)</div>
+            <div>C (56 - 70)</div>
+            <div>B (71 - 85)</div>
+            <div>A (86 - 100)</div>
+          </div>
+        </div>
       </div>
-      <div class="legend">
-        <div class="informationContainer">
-          <div class="mapinfo" id='mapAddress'></div>
-          <div class="mapinfo" id='mapScore'></div>
-          <div class="mapinfo" id='mapYear'></div>
-        </div>
-        <p> <b>Energy Score </b> </p>
-        <div class="color-code">
-          <div class="colors" id="c1"></div>
-          <div class="colors" id="c2"></div>
-          <div class="colors" id="c3"></div>
-          <div class="colors" id="c4"></div>
-        </div>
-        <div class="color-container">
-          <div>D (0 - 55)</div>
-          <div>C (56 - 70)</div>
-          <div>B (71 - 85)</div>
-          <div>A (86 - 100)</div>
-        </div>
-        <p style="text-align:left"> <i>Ratings include a 1–100 ENERGY STAR score and corresponding A–D letter grade. ENERGY STAR scores are assigned based on building occupancy type, with building performance measured against that of similar
-            buildings. </i> </p>
+      <div>
+        <p style="text-align:left;font-size:12px;margin:30px 30px 0px"> <i>Ratings include a 1–100 ENERGY STAR score and corresponding A–D letter grade. ENERGY STAR scores are assigned based on building occupancy type, with building performance measured against that of similar buildings. </i> </p>
         <button type="button" data-bs-toggle="modal" class="btn btn-link" data-bs-target="#modal"> <i class="fas fa-info"></i></button>
-
       </div>
     </div>
     <div class='map' id='map'></div>
