@@ -3,7 +3,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZWxpc2FiZXRoYXBwZWwiLCJhIjoiY2tsMTNnYTdmMmxhb
 var map = new mapboxgl.Map({
   container: 'map', // container ID
   style: 'mapbox://styles/mapbox/light-v10', // style URL
-  center: [-73.966311,40.746759], // starting position
+  center: [-73.966311, 40.746759], // starting position
   zoom: 12 // starting zoom
 });
 
@@ -12,49 +12,53 @@ var nav = new mapboxgl.NavigationControl();
 
 map.addControl(nav, 'top-left');
 
-// loading the map layers on load
-map.on('style.load', function () {
+// loading the map layers (coloured features and highlighting) on load
+map.on('style.load', function() {
 
- $.getJSON('data/ll84_energy_map.geojson', function(featureCollection) {
+  $.getJSON('data/ll84_energy_map.geojson', function(featureCollection) {
 
-   featureCollection.features.forEach(function(feature) {
-     feature.properties.disclosure_pluto_es_score = parseInt(feature.properties.disclosure_pluto_es_score)
-   })
+    featureCollection.features.forEach(function(feature) {
+      feature.properties.disclosure_pluto_es_score = parseInt(feature.properties.disclosure_pluto_es_score)
+    })
 
 
-   // add a geojson source
-   map.addSource('nyc-bbls', {
-     type: 'geojson',
-     data: featureCollection
-   });
+    // add a geojson source
+    map.addSource('nyc-bbls', {
+      type: 'geojson',
+      data: featureCollection
+    });
 
-   // add a layer to style and display the source
-   map.addLayer({
-     'id': 'nycbbls',
-     'type': 'fill',
-     'source': 'nyc-bbls',
-     'layout': {},
-     'paint': {
-       'fill-color': {
-         property: 'score',
-         type: 'categorical',
-         stops:[
-         ['D',
-         'red'],
-         ['C',
-         'orange'],
-         ['B',
-         'yellow'],
-         ['A',
-         'green'],
-       ]
-      },
-       'fill-outline-color': '#ccc',
-       'fill-opacity': 0.8
-     }
-   })
-   // add a separate layer and source for the highlighting of parcels
-   map.addSource('highlight-feature', {
+    // add a layer to style and display the source
+    map.addLayer({
+      'id': 'nycbbls',
+      'type': 'fill',
+      'source': 'nyc-bbls',
+      'layout': {},
+      'paint': {
+        'fill-color': {
+          property: 'score',
+          type: 'categorical',
+          stops: [
+            ['D',
+              'red'
+            ],
+            ['C',
+              'orange'
+            ],
+            ['B',
+              'yellow'
+            ],
+            ['A',
+              'green'
+            ],
+          ]
+        },
+        'fill-outline-color': '#ccc',
+        'fill-opacity': 0.8
+      }
+    })
+    // add a separate layer and source for the highlighting of parcels
+    map.addSource('highlight-feature', {
       type: 'geojson',
       data: {
         type: 'FeatureCollection',
@@ -75,7 +79,7 @@ map.on('style.load', function () {
 
 
 
- })
+  })
 })
 
 // add function to display information in sidebar when parcel is selected
@@ -90,7 +94,7 @@ map.on('click', function(e) {
     document.getElementById('score').innerHTML = '<h4 style = "font-size:800%" "text-align:center" ><strong>' + nycbbls[0].properties.score + '</strong></h4><p><strong><em>';
     document.getElementById('mapAddress').innerHTML = 'address:<h4 style = "font-size:100%" "text-align:left">' + nycbbls[0].properties.disclosure_pluto_address + '</h4><p><strong><em>';
     document.getElementById('mapScore').innerHTML = 'energy score:<h4 style = "font-size:600%">' + nycbbls[0].properties.disclosure_pluto_es_score + '</h4><p><strong><em>';
-    document.getElementById('mapYear').innerHTML = 'year built:<h4 style = "font-size:100%" "text-align:left">' + nycbbls[0].properties.YearBuilt+ '</h4><p><strong><em>';
+    document.getElementById('mapYear').innerHTML = 'year built:<h4 style = "font-size:100%" "text-align:left">' + nycbbls[0].properties.YearBuilt + '</h4><p><strong><em>';
     // set this feature as the data for the highlight source
     map.getSource('highlight-feature').setData(hoveredFeature.geometry);
 
@@ -109,16 +113,16 @@ map.on('mousemove', function(d) {
     map.getCanvas().style.cursor = 'pointer';
   } else {
     map.getCanvas().style.cursor = '';
-}
+  }
 });
 // adding a search bar
 map.addControl(
-new MapboxGeocoder({
-accessToken: mapboxgl.accessToken,
-mapboxgl: mapboxgl
-})
+  new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl
+  })
 );
 // displaying modal when the site loads
 $(window).on('load', function() {
-       $('#modal').modal('show');
-   });
+  $('#modal').modal('show');
+});

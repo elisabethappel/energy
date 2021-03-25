@@ -1,37 +1,32 @@
-html, body, .fullContainer, .sidebar, .map{
+html, body, .fullContainer, .sidebar, .map {
   height: 100%;
   margin: 0;
-
 }
 
 .fullContainer, .color-code {
-    display: flex;
+  display: flex;
 }
-
 
 .sidebar {
   width: 300px;
   padding: 10px;
   text-align: center;
   font: 30px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-   overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 .map {
-  flex-grow:1;
-  overflow:hidden;
+  flex-grow: 1;
+  overflow: hidden;
 }
-
 
 .score-container {
   position: relative;
-  height:200px;
+  height: 200px;
   top: 0;
   margin-top: 0px;
   width: 100%;
 }
-
-
 
 .legend {
   position: relative;
@@ -42,21 +37,23 @@ html, body, .fullContainer, .sidebar, .map{
   text-align: center;
   font: 12px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
+
 .informationContainer {
   margin-top: 20px;
-  width:100%;
+  width: 100%;
   display: grid;
   grid-column-start: 1;
   grid-column-end: 2;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
 .mapinfo {
   position: relative;
   width: 100%;
   text-align: left;
   font: 15px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  height:100px;
+  height: 100px;
 }
 
 .colors {
@@ -90,9 +87,9 @@ html, body, .fullContainer, .sidebar, .map{
   width: 100%;
   justify-content: space-evenly;
   margin-bottom: 15px;
-  font-weight:bold;
+  font-weight: bold;
 }
 
 .row {
-  margin:30px 0px
+  margin: 30px 0px
 }

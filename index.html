@@ -1,33 +1,36 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <body>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <!-- Mapbox CSS -->
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Building Energy Use</title>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <!-- Mapbox CSS -->
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Building Energy Use</title>
   </head>
 
-<div class='fullContainer'>
-  <div class='sidebar'> <b>Building Energy Efficiency Rating </b>
-    <div class= 'score-container' id='score'> <p style="text-align:left; margin:30px 30px; font-size:20px"> Select a building on the map to explore its energy performance </p>
-    </div>
+  <div class='fullContainer'>
+    <div class='sidebar'> <b>Building Energy Efficiency Rating </b>
+      <div class='score-container' id='score'>
+        <p style="text-align:left; margin:30px 30px; font-size:20px"> Select a building on the map to explore its energy performance </p>
+      </div>
       <div class="legend">
-        <div class= "informationContainer">
-          <div class= "mapinfo" id='mapAddress'></div>
-          <div class= "mapinfo" id='mapScore'></div>
-          <div class= "mapinfo" id='mapYear'></div>
+        <div class="informationContainer">
+          <div class="mapinfo" id='mapAddress'></div>
+          <div class="mapinfo" id='mapScore'></div>
+          <div class="mapinfo" id='mapYear'></div>
         </div>
         <p> <b>Energy Score </b> </p>
         <div class="color-code">
-        <div class="colors" id="c1"></div>
-        <div class="colors" id="c2"></div>
-        <div class="colors" id="c3"></div>
-        <div class="colors" id="c4"></div>
+          <div class="colors" id="c1"></div>
+          <div class="colors" id="c2"></div>
+          <div class="colors" id="c3"></div>
+          <div class="colors" id="c4"></div>
         </div>
         <div class="color-container">
           <div>D (0 - 55)</div>
@@ -35,40 +38,45 @@
           <div>B (71 - 85)</div>
           <div>A (86 - 100)</div>
         </div>
-        <p style="text-align:left"> <i>Ratings include a 1–100 ENERGY STAR score and corresponding A–D letter grade. ENERGY STAR scores are assigned based on building occupancy type, with building performance measured against that of similar buildings. </i> </p>
+        <p style="text-align:left"> <i>Ratings include a 1–100 ENERGY STAR score and corresponding A–D letter grade. ENERGY STAR scores are assigned based on building occupancy type, with building performance measured against that of similar
+            buildings. </i> </p>
         <button type="button" data-bs-toggle="modal" class="btn btn-link" data-bs-target="#modal"> <i class="fas fa-info"></i></button>
 
       </div>
-  </div>
-  <div class= 'map' id='map'></div>
+    </div>
+    <div class='map' id='map'></div>
 
-<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg ">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">About this map</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">About this map</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
             <div class="container-fluid">
-              <p> Building energy use accounts for nearly-two thirds of greenhouse gas emissions in New York City. The City's set of energy efficiency laws targets the largest existing buildings which constitute 45 percent of citywide energy use. Local Laws 84 and 33 requires buildings above 25,000 square feet to <a href="https://www1.nyc.gov/assets/sustainability/downloads/pdf/nycbenchmarkinglaw.pdf">annually benchmark </a>energy and water consumption, and to <a href="https://www1.nyc.gov/assets/buildings/local_laws/ll33of2018.pdf"> post an energy efficiency grade </a> at each public entrance. Similar to the Department of Health grades for restaurants, a building’s energy efficiency grade is a letter. </p>
-                  <div class="row">
-                    <div class="col-8 col-md-6">
-                      <img src = "img/ex-score.jpg" width="75%" style="vertical-align:middle;margin:30px 50px">
-                    </div>
-                    <div class="col-4 col-md-6" style="margin:70px 0px">
-                    <p>  On October 1, 2020, buildings over 25,000 square feet in New York City received their first energy efficiency grades from the City Department of Buildings (DOB), and were required to post the grade “in a conspicuous location near each public entrance to such building” by October 30, 2020.</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-8 col-md-6">
-                      <img src = "img/finalplot.png" width = "100%" style="margin:30px 0px">
-                    </div>
-                    <div class="col-4 col-md-6" style="margin:30px 0px">
-                    <p>  As it stands, many buildings perform poorly. Energy efficiency performance can be improved through upgrades of building systems, which the City has resources to finance. </p>
-                    </div>
-                  </div>
+              <p> Building energy use accounts for nearly-two thirds of greenhouse gas emissions in New York City. The City's set of energy efficiency laws targets the largest existing buildings which constitute 45 percent of citywide energy use.
+                Local Laws 84 and 33 requires buildings above 25,000 square feet to <a href="https://www1.nyc.gov/assets/sustainability/downloads/pdf/nycbenchmarkinglaw.pdf">annually benchmark </a>energy and water consumption, and to <a
+                  href="https://www1.nyc.gov/assets/buildings/local_laws/ll33of2018.pdf"> post an energy efficiency grade </a> at each public entrance. Similar to the Department of Health grades for restaurants, a building’s energy efficiency grade
+                is a letter. </p>
+              <div class="row">
+                <div class="col-8 col-md-6">
+                  <img src="img/ex-score.jpg" width="75%" style="vertical-align:middle;margin:30px 50px">
+                </div>
+                <div class="col-4 col-md-6" style="margin:70px 0px">
+                  <p> On October 1, 2020, buildings over 25,000 square feet in New York City received their first energy efficiency grades from the City Department of Buildings (DOB), and were required to post the grade “in a conspicuous location
+                    near each public entrance to such building” by October 30, 2020.</p>
+                </div>
               </div>
+              <div class="row">
+                <div class="col-8 col-md-6">
+                  <img src="img/finalplot.png" width="100%" style="margin:30px 0px">
+                </div>
+                <div class="col-4 col-md-6" style="margin:30px 0px">
+                  <p> As it stands, many buildings perform poorly. Energy efficiency performance can be improved through upgrades of building systems, which the City has resources to finance. </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="modal-footer">
@@ -78,13 +86,14 @@
     </div>
   </div>
 
-</div>
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
-    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
-    <script src="https://kit.fontawesome.com/9fb8c9b9bc.js" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-  </body>
+  </div>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/9fb8c9b9bc.js" crossorigin="anonymous"></script>
+  <script src="js/scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+
 </html>
