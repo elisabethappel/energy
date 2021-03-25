@@ -1,17 +1,18 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiZWxpc2FiZXRoYXBwZWwiLCJhIjoiY2tsMTNnYTdmMmxhbjJvcW80a3M1cGQ2ZyJ9.zRFRv1-WLc3E43O5Klf8Jw';
-
+//setting map
 var map = new mapboxgl.Map({
   container: 'map', // container ID
   style: 'mapbox://styles/mapbox/light-v10', // style URL
-  center: [-73.966311,40.746759], // starting position [lng, lat]
+  center: [-73.966311,40.746759], // starting position
   zoom: 12 // starting zoom
 });
 
+//add navigation control
 var nav = new mapboxgl.NavigationControl();
 
 map.addControl(nav, 'top-left');
 
-
+// loading the map layers on load
 map.on('style.load', function () {
 
  $.getJSON('data/ll84_energy_map.geojson', function(featureCollection) {
@@ -52,7 +53,7 @@ map.on('style.load', function () {
        'fill-opacity': 0.8
      }
    })
-
+   // add a separate layer and source for the highlighting of parcels
    map.addSource('highlight-feature', {
       type: 'geojson',
       data: {
@@ -77,6 +78,7 @@ map.on('style.load', function () {
  })
 })
 
+// add function to display information in sidebar when parcel is selected
 map.on('click', function(e) {
   var nycbbls = map.queryRenderedFeatures(e.point, {
     layers: ['nycbbls']
@@ -92,23 +94,13 @@ map.on('click', function(e) {
     // set this feature as the data for the highlight source
     map.getSource('highlight-feature').setData(hoveredFeature.geometry);
 
-  } else {
-    document.getElementById('score').innerHTML = '';
-    document.getElementById('mapAddress').innerHTML = '';
-    document.getElementById('mapScore').innerHTML = '';
-    document.getElementById('mapYear').innerHTML = '';
-    // reset the highlight source to an empty featurecollection
-      map.getSource('highlight-feature').setData({
-        type: 'FeatureCollection',
-        features: []
-      });
   }
 });
 
 
 
 
-
+// when the mouse moves, the cursor will change to a pointer
 map.on('mousemove', function(d) {
   var nycbbls = map.queryRenderedFeatures(d.point, {
     layers: ['nycbbls']
@@ -119,14 +111,14 @@ map.on('mousemove', function(d) {
     map.getCanvas().style.cursor = '';
 }
 });
-
+// adding a search bar
 map.addControl(
 new MapboxGeocoder({
 accessToken: mapboxgl.accessToken,
 mapboxgl: mapboxgl
 })
 );
-
+// displaying modal when the site loads
 $(window).on('load', function() {
        $('#modal').modal('show');
    });
