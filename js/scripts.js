@@ -14,12 +14,8 @@ map.addControl(nav, 'top-left');
 
 // loading the map layers (coloured features and highlighting) on load
 map.on('style.load', function() {
-
+// retrieve geojson file
   $.getJSON('data/ll84_energy_map.geojson', function(featureCollection) {
-
-    featureCollection.features.forEach(function(feature) {
-      feature.properties.disclosure_pluto_es_score = parseInt(feature.properties.disclosure_pluto_es_score)
-    })
 
 
     // add a geojson source

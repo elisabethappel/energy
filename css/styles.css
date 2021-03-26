@@ -34,8 +34,8 @@ html, body, .fullContainer, .sidebar, .map {
   padding: 20px;
   position: relative;
   width: 90%;
-  border-color:grey;
-  border-width:thin;
+  border-color: grey;
+  border-width: thin;
   border-style: solid;
 }
 
@@ -45,8 +45,8 @@ html, body, .fullContainer, .sidebar, .map {
   position: absolute;
   width: 100%;
   z-index: -1;
-  border-color:grey;
-  border-width:thin;
+  border-color: grey;
+  border-width: thin;
   border-style: solid;
 }
 
