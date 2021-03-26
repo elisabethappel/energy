@@ -33,7 +33,6 @@ html, body, .fullContainer, .sidebar, .map {
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin: 10px auto 0;
-  max-width: 550px;
   padding: 20px;
   position: relative;
   width: 90%;

@@ -45,6 +45,9 @@
   margin-top: 4px;
   margin-bottom: 15px;
 }
+.energyContainer {
+  height: 100px;
+}
 
 .colors {
   width: 25%;
