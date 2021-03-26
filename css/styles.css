@@ -1,3 +1,5 @@
+/* setting up full page styping, including map and sidebar structure */
+
 html, body, .fullContainer, .sidebar, .map {
   height: 100%;
   margin: 0;
@@ -14,6 +16,7 @@ html, body, .fullContainer, .sidebar, .map {
   font: 30px 'Helvetica Neue', Arial, Helvetica, sans-serif;
   overflow-y: scroll;
 }
+/* sidebar.css sets the styling for the components within the sidebar, with the exception of the paper effect below */
 
 .map {
   flex-grow: 1;
@@ -25,7 +28,7 @@ html, body, .fullContainer, .sidebar, .map {
   margin: 30px 0px
 }
 
-/*create letter page effect, retrieved code from: https://webartdevelopers.com/blog/css-stacked-paper-effect/*/
+/*create letter effect to make the score appear like paper, retrieved code from: https://webartdevelopers.com/blog/css-stacked-paper-effect/*/
 .letter {
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
