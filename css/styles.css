@@ -31,9 +31,12 @@ html, body, .fullContainer, .sidebar, .map {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin: 10px auto 0;
   max-width: 550px;
-  padding: 24px;
+  padding: 20px;
   position: relative;
   width: 90%;
+  border-color:grey;
+  border-width:thin;
+  border-style: solid;
 }
 
 .letter:before, .letter:after {
@@ -42,10 +45,13 @@ html, body, .fullContainer, .sidebar, .map {
   position: absolute;
   width: 100%;
   z-index: -1;
+  border-color:grey;
+  border-width:thin;
+  border-style: solid;
 }
 
 .letter:before {
-  background: #fafafa;
+  background: #ededed;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   left: -5px;
   top: 4px;
